@@ -1,0 +1,60 @@
+{
+  "metadata": {
+    "driverVersion": "x.x.x",
+    "idFactoryType": "POSTGRESQL",
+    "extractionTime": "2023-11-27T12:00:00",
+    "dbmsVersion": "x.x.x",
+    "quotationString": "\"",
+    "driverName": "PostgreSQL JDBC Driver",
+    "dbmsProductName": "PostgreSQL"
+  },
+  "relations": [
+    {
+      "name": ["\"Student\""],
+      "uniqueConstraints": [
+        {
+          "name": "Pk",
+          "determinants": ["id"],
+          "isPrimaryKey": true
+        }
+      ],
+      "foreignKeys": [],
+      "columns": [
+        {
+          "isNullable": false,
+          "datatype": "VARCHAR(10)",
+          "name": "\"id\"",
+          "constraints": ["PRIMARY KEY"]
+        },
+        {
+          "isNullable": false,
+          "datatype": "VARCHAR(255)",
+          "name": "\"Name\"",
+          "constraints": ["NOT NULL"]
+        },
+        {
+          "isNullable": true,
+          "datatype": "VARCHAR(255)",
+          "name": "\"Country\""
+        },
+        {
+          "isNullable": false,
+          "datatype": "INT",
+          "name": "\"IsPhDStudent\"",
+          "constraints": ["CHECK (\"IsPhDStudent\" IN (0, 1))"]
+        }
+      ],
+      "otherNames": []
+    }
+  ],
+  "data": [
+    {
+      "relation": "\"Student\"",
+      "values": [
+        {"id": "N123", "Name": "Nick", "Country": "Sweden", "IsPhDStudent": 1},
+        {"id": "J123", "Name": "Jack", "Country": "Italy", "IsPhDStudent": 0},
+        {"id": "K123", "Name": "Kate", "Country": "Belgium", "IsPhDStudent": 1}
+      ]
+    }
+  ]
+}

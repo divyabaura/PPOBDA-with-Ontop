@@ -1,0 +1,3 @@
+[
+  "Q() :- Student(x), hasCountry(x, Belgium) ."
+]

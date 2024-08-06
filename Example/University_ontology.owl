@@ -1,0 +1,14 @@
+Prefix(:=<http://example.org/my-ontology#>)
+
+Ontology(<http://example.org/my-ontology>
+	Declaration(Class(:PhDStudent))
+	Declaration(Class(:Student))
+	Declaration(Class(:Country))
+
+	Declaration(DataProperty(:hasName))
+	Declaration(ObjectProperty(:hasCountry))
+
+	SubClassOf(:PhDStudent :Student)
+	SubClassOf(DataSomeValuesFrom(:hasName xsd:string) :Student)
+	SubClassOf(ObjectSomeValuesFrom(ObjectInverseOf(:hasCountry) owl:Thing) :Country)
+)
